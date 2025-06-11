@@ -29,16 +29,16 @@ jobs:
           push: true
           tags: anuraaag5/argocd-app:${{github.sha}}
         
-    #   - name: Clone argocd ops repo update manifests.
-    #     env:
-    #       PAT: ${{secrets.PAT}}
-    #     run: |
-    #       git clone https://github.com/anuraag-5/argocd.git
+      - name: Clone argocd ops repo update manifests.
+        env:
+          PAT: ${{secrets.PAT}}
+        run: |
+          git clone https://github.com/anuraag-5/argocd.git
 
-    #       sed -i 's|image: anuraaag5/argocd-app:.*'|image: anuraaag5/argocd-app:${{github.sha}}|' /deployment.yml
+          sed -i 's|image: anuraaag5/argocd-app:.*'|image: anuraaag5/argocd-app:${{github.sha}}|' /deployment.yml
 
-    #       git config user.name "Github Actions Bot"
-    #       git config user.email "actions@github.com"
-    #       git add.
-    #       git commit -m "Updated image"
-    #       git push https://${PAT}@github.com/anuraag-5/argocd.git main
+          git config user.name "Github Actions Bot"
+          git config user.email "actions@github.com"
+          git add.
+          git commit -m "Updated image"
+          git push https://${PAT}@github.com/anuraag-5/argocd.git main
