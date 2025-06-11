@@ -40,7 +40,6 @@ jobs:
 
           git config user.name "Github Actions Bot"
           git config user.email "actions@github.com"
-          git add.
+          git add .
           git commit -m "Updated image"
           git push https://${PAT}@github.com/anuraag-5/argocd.git main
-          
